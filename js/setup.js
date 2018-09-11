@@ -31,7 +31,8 @@ for (var i = 0; i < 4; i++) {
   });
 }
 
-// Функция отрисовки волшебников
+// Функция отрисовки волшебника
+
 var renderWizard = function (wizard) {
   var wizardElement = similarWizardTemplate.cloneNode(true);
   wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
