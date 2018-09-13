@@ -2,25 +2,40 @@
 
 // Объявление Констант
 
+// Имена
+
 var NAMES = ['Иван', 'Хуан Себастьян', 'Мария', 'Кристоф', 'Виктор', 'Юлия', 'Люпита', 'Вашингтон'];
+
+// Фамилии
+
 var LAST_NAMES = ['да Марья', 'Верон', 'Мирабелла', 'Вальц', 'Онопко', 'Топольницкая', 'Нионго', 'Ирвинг'];
+
+// Цвет плащей
+
 var COAT_COLORS = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
+
+// Цвет глаз
+
 var EYES_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
+
+// Функция нахождения случайного элемента в заданном диапазоне
+
+window.getRandomValues = function (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+};
 
 // Показываем волшебника
 
 var setup = document.querySelector('.setup');
 setup.classList.remove('hidden');
 
-// Переменные
+// Находим Template и его Content
 
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
-var similarList = document.querySelector('.setup-similar-list');
 
-// Функция нахождения случайного элемента в заданном диапазоне
-window.getRandomValues = function (min, max) {
-  return Math.floor(Math.random() * (max - min)) + min;
-};
+// Находим куда вставляем волшебников
+
+var similarList = document.querySelector('.setup-similar-list');
 
 // Создаем Массив Волшебников
 
@@ -46,7 +61,7 @@ var renderWizard = function (wizard) {
   return wizardElement;
 };
 
-// Документ Фрагмент
+// Сщздаем документ Фрагмент
 
 var fragment = document.createDocumentFragment();
 for (i = 0; i < wizards.length; i++) {
